@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VRM 助理示範</title>
+  <style>
+    body { margin: 0; font-family: system-ui, "Noto Sans TC", "Microsoft JhengHei", sans-serif; background: #fafafa; color: #222; }
+    main { max-width: 720px; margin: 0 auto; padding: 40px 16px 200px; line-height: 1.7; }
+    code, pre { background: #eee; border-radius: 6px; }
+    code { padding: 1px 6px; }
+    pre { padding: 14px; overflow-x: auto; }
+    button { padding: 6px 12px; margin: 4px 4px 4px 0; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>VRM 助理示範頁</h1>
+    <p>右下角就是助理。點角色或輸入訊息即可聊天；角色眼睛會跟著滑鼠移動。</p>
+
+    <h2>嵌入方式</h2>
+    <pre>&lt;script src="vrm-assistant.js"
+        data-model="你的模型.vrm"
+        data-name="小助理"&gt;&lt;/script&gt;</pre>
+
+    <h2>用 JavaScript 控制</h2>
+    <button onclick="VRMAssistant.say('歡迎光臨！今天想找什麼呢？', 'happy')">say()</button>
+    <button onclick="VRMAssistant.ask('我想要退款')">ask('我想要退款')</button>
+    <button onclick="VRMAssistant.setExpression('surprised')">驚訝</button>
+    <button onclick="VRMAssistant.setExpression('sad')">難過</button>
+    <button onclick="VRMAssistant.open()">open()</button>
+    <br>
+    <button onclick="VRMAssistant.hide()">hide() 躲起來探頭</button>
+    <button onclick="VRMAssistant.show()">show() 走出來</button>
+    <button onclick="VRMAssistant.walkTo(innerWidth / 2)">walkTo(中間)</button>
+    <br>
+    <button onclick="VRMAssistant.play('wave')">揮手</button>
+    <button onclick="VRMAssistant.play('clap')">拍手</button>
+    <button onclick="VRMAssistant.play('jump')">跳</button>
+    <button onclick="VRMAssistant.play('think')">思考</button>
+    <button onclick="VRMAssistant.play('lookAround')">東張西望</button>
+    <button onclick="VRMAssistant.play('sleepy')">想睡</button>
+    <button onclick="VRMAssistant.play('present')">介紹（看字、看我）</button>
+    <button onclick="VRMAssistant.play('nod')">點頭</button>
+    <button onclick="VRMAssistant.play('angry')">生氣</button>
+    <button onclick="VRMAssistant.play('blush')">害羞</button>
+    <button onclick="VRMAssistant.play('stretch')">伸懶腰</button>
+    <p>小技巧：角色可以直接拖曳；拖到螢幕邊緣放開，會躲起來探頭；連戳三下會害羞；<b>右鍵</b>角色可以調整大小。</p>
+  </main>
+
+  <!-- 只要這一行 -->
+  <script src="vrm-assistant.js" data-name="VRM 小助理"></script>
+</body>
+</html>
